@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'calculator2';
 
   resultado: number = 0;
-  advertencia: string = 'hola'
+  advertencia: string = '¿Que operación deseas realizar?'
 
   numeros = {
     numero1: 0,
@@ -21,6 +21,7 @@ export class AppComponent {
       this.advertencia = 'Introduce dos números';
     } else {
       this.resultado = this.numeros.numero1 + this.numeros.numero2;
+      this.advertencia = 'Operación realizada';
     };
   }
 
@@ -29,6 +30,7 @@ export class AppComponent {
       this.advertencia = 'Introduce dos números';
     } else {
       this.resultado = this.numeros.numero1 - this.numeros.numero2;
+      this.advertencia = 'Operación realizada';
     };
   }
 
@@ -37,6 +39,7 @@ export class AppComponent {
       this.advertencia = 'Introduce dos números';
     } else {
       this.resultado = this.numeros.numero1 * this.numeros.numero2;
+      this.advertencia = 'Operación realizada';
     };
   }
 
@@ -46,6 +49,7 @@ export class AppComponent {
     } else {
       this.resultado = this.numeros.numero1 / this.numeros.numero2;
       this.resultado = Number(this.resultado.toFixed(2));
+      this.advertencia = 'Operación realizada';
     };
   }
 }

@@ -1,12 +1,11 @@
-table,
-th,
-td {
-    border: 1px solid black;
+table {
+    border-collapse: collapse;
+    width: 50%;
 }
 
-
-
-
-.contenedor-boton-operaciones {
-    border-color: green;
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
 }
