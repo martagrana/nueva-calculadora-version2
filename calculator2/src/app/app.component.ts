@@ -17,24 +17,35 @@ export class AppComponent {
   };
 
   sumar() {
-    this.resultado = this.numeros.numero1 + this.numeros.numero2;
-
-    if (this.numeros.numero1 = 0) {
-      this.advertencia = 'escribe un numero';
-
+    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
+      this.advertencia = 'Introduce dos números';
+    } else {
+      this.resultado = this.numeros.numero1 + this.numeros.numero2;
     };
   }
+
   restar() {
-    this.resultado = this.numeros.numero1 - this.numeros.numero2;
-
+    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
+      this.advertencia = 'Introduce dos números';
+    } else {
+      this.resultado = this.numeros.numero1 - this.numeros.numero2;
+    };
   }
+
   multiplicar() {
-    this.resultado = this.numeros.numero1 * this.numeros.numero2;
-
+    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
+      this.advertencia = 'Introduce dos números';
+    } else {
+      this.resultado = this.numeros.numero1 * this.numeros.numero2;
+    };
   }
-  dividir() {
-    this.resultado = this.numeros.numero1 / this.numeros.numero2;
-    this.resultado = Number(this.resultado.toFixed(2));
 
+  dividir() {
+    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
+      this.advertencia = 'Introduce dos números';
+    } else {
+      this.resultado = this.numeros.numero1 / this.numeros.numero2;
+      this.resultado = Number(this.resultado.toFixed(2));
+    };
   }
 }
