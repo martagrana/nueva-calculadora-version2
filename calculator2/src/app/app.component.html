@@ -19,7 +19,7 @@
   <tr>
     <td>
       <div>
-        <input type="number" [(ngModel)]="numeros.numero1">
+        <input type="number" [(ngModel)]="operador1">
       </div>
     </td>
     <td><button type="button" (click)="operar('+')">mas</button></td>
@@ -27,19 +27,19 @@
   <tr>
     <td>
       <div>
-        <input type="number" [(ngModel)]="numeros.numero2">
+        <input type="number" [(ngModel)]="operador2">
       </div>
     </td>
     <td><button type="button" (click)="operar('-')">menos</button></td>
   </tr>
   <tr>
     <td>Resultado</td>
-    <td><button type="button" (click)="multiplicar()">por</button></td>
+    <td><button type="button" (click)="operar('*')">por</button></td>
   </tr>
   <tr>
     <td>
       <div>{{resultado}}</div>
     </td>
-    <td><button type="button" (click)="dividir()">entre</button></td>
+    <td><button type="button" (click)="operar('/')">entre</button></td>
   </tr>
 </table>

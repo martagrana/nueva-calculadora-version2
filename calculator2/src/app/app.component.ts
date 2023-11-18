@@ -11,54 +11,53 @@ export class AppComponent {
   resultado: number = 0;
   advertencia: string = '¿Que operación deseas realizar?'
 
-  numeros = {
-    numero1: 0,
-    numero2: 0,
-  };
+  operador1: number = 0;
+  operador2: number = 0;
 
   operar(operador: string) {
-    if (operador === '+') {
+    if (this.operador1 === 0 && this.operador2 === 0) {
+      this.advertencia = 'Introduce dos números';
+    }
+    else if (operador === '+') {
       console.log('vamos a sumar');
-      this.resultado = this.sumar(this.numeros.numero1, this.numeros.numero2);
+      this.resultado = this.sumar(this.operador1, this.operador2);
     } else if (operador === '-') {
       console.log('vamos a restar');
+      this.resultado = this.restar(this.operador1, this.operador2);
+    }
+    else if (operador === '*') {
+      console.log('vamos a multiplicar');
+      this.resultado = this.multiplicar(this.operador1, this.operador2);
+    }
+    else if (operador === '/') {
+      console.log('vamos a dividir');
+      this.resultado = this.dividir(this.operador1, this.operador2);
     }
     else {
       console.log('operador desconocido');
     }
-
   }
 
-  sumar(operando1: number, operando2: number): number {
-    return operando1 + operando2;
-
+  sumar(sumando1: number, sumando2: number): number {
+    return sumando1 + sumando2;
   }
-
-  restar() {
-    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
-      this.advertencia = 'Introduce dos números';
-    } else {
-      this.resultado = this.numeros.numero1 - this.numeros.numero2;
-      this.advertencia = 'Operación realizada';
-    };
+  restar(minuendo: number, sustraendo: number): number {
+    return minuendo - sustraendo;
   }
-
-  multiplicar() {
-    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
-      this.advertencia = 'Introduce dos números';
-    } else {
-      this.resultado = this.numeros.numero1 * this.numeros.numero2;
-      this.advertencia = 'Operación realizada';
-    };
+  multiplicar(factor1: number, factor2: number): number {
+    return factor1 * factor2;
   }
-
-  dividir() {
-    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
-      this.advertencia = 'Introduce dos números';
-    } else {
-      this.resultado = this.numeros.numero1 / this.numeros.numero2;
-      this.resultado = Number(this.resultado.toFixed(2));
-      this.advertencia = 'Operación realizada';
-    };
+  dividir(dividendo: number, divisor: number): number {
+    if (divisor === 0) {
+      console.log('No se puede hacer la división');
+      this.advertencia = 'No se puede hacer la división';
+      return NaN
+    }
+    else {
+      return Math.round((dividendo / divisor) * 100) / 100;
+    }
   }
 }
+
+
+
