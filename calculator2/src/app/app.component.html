@@ -22,7 +22,7 @@
         <input type="number" [(ngModel)]="numeros.numero1">
       </div>
     </td>
-    <td><button type="button" (click)="sumar()">mas</button></td>
+    <td><button type="button" (click)="operar('+')">mas</button></td>
   </tr>
   <tr>
     <td>
@@ -30,7 +30,7 @@
         <input type="number" [(ngModel)]="numeros.numero2">
       </div>
     </td>
-    <td><button type="button" (click)="restar()">menos</button></td>
+    <td><button type="button" (click)="operar('-')">menos</button></td>
   </tr>
   <tr>
     <td>Resultado</td>

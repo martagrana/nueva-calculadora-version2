@@ -16,13 +16,22 @@ export class AppComponent {
     numero2: 0,
   };
 
-  sumar() {
-    if (this.numeros.numero1 === 0 && this.numeros.numero2 === 0) {
-      this.advertencia = 'Introduce dos números';
-    } else {
-      this.resultado = this.numeros.numero1 + this.numeros.numero2;
-      this.advertencia = 'Operación realizada';
-    };
+  operar(operador: string) {
+    if (operador === '+') {
+      console.log('vamos a sumar');
+      this.resultado = this.sumar(this.numeros.numero1, this.numeros.numero2);
+    } else if (operador === '-') {
+      console.log('vamos a restar');
+    }
+    else {
+      console.log('operador desconocido');
+    }
+
+  }
+
+  sumar(operando1: number, operando2: number): number {
+    return operando1 + operando2;
+
   }
 
   restar() {
