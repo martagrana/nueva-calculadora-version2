@@ -18,27 +18,36 @@ export class AppComponent {
     if (this.operador1 === 0 && this.operador2 === 0) {
       this.advertencia = 'Introduce dos números';
     }
-    else if (operador === '+') {
-      console.log('vamos a sumar');
-      this.resultado = this.sumar(this.operador1, this.operador2);
-    } else if (operador === '-') {
-      console.log('vamos a restar');
-      this.resultado = this.restar(this.operador1, this.operador2);
-    }
-    else if (operador === '*') {
-      console.log('vamos a multiplicar');
-      this.resultado = this.multiplicar(this.operador1, this.operador2);
-    }
-    else if (operador === 'dividir' || operador === '/') {
-      console.log('vamos a dividir');
-      this.resultado = this.dividir(this.operador1, this.operador2);
-      if (Number.isNaN(this.resultado)) {
-        console.log('No se puede hacer la división');
-        this.advertencia = 'No se puede hacer la división';
-      }
-    }
     else {
-      console.log('operador desconocido');
+      switch (operador) {
+        case '+': {
+          console.log('vamos a sumar');
+          this.resultado = this.sumar(this.operador1, this.operador2);
+          break;
+        }
+        case '-': {
+          console.log('vamos a restar');
+          this.resultado = this.restar(this.operador1, this.operador2);
+          break;
+        }
+        case '*': {
+          console.log('vamos a multiplicar');
+          this.resultado = this.multiplicar(this.operador1, this.operador2);
+          break;
+        }
+        case '/': {
+          this.resultado = this.dividir(this.operador1, this.operador2);
+          if (Number.isNaN(this.resultado)) {
+            console.log('No se puede hacer la división');
+            this.advertencia = 'No se puede hacer la división';
+          }
+          break;
+        }
+        default: {
+          console.log('operador desconocido');
+          break;
+        }
+      }
     }
   }
 
