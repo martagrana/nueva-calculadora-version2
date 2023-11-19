@@ -29,9 +29,13 @@ export class AppComponent {
       console.log('vamos a multiplicar');
       this.resultado = this.multiplicar(this.operador1, this.operador2);
     }
-    else if (operador === '/') {
+    else if (operador === 'dividir' || operador === '/') {
       console.log('vamos a dividir');
       this.resultado = this.dividir(this.operador1, this.operador2);
+      if (Number.isNaN(this.resultado)) {
+        console.log('No se puede hacer la división');
+        this.advertencia = 'No se puede hacer la división';
+      }
     }
     else {
       console.log('operador desconocido');
@@ -49,9 +53,7 @@ export class AppComponent {
   }
   dividir(dividendo: number, divisor: number): number {
     if (divisor === 0) {
-      console.log('No se puede hacer la división');
-      this.advertencia = 'No se puede hacer la división';
-      return NaN
+      return NaN;
     }
     else {
       return Math.round((dividendo / divisor) * 100) / 100;
