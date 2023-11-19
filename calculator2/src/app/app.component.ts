@@ -35,7 +35,6 @@ export class AppComponent {
           this.resultado = this.multiplicar(this.operador1, this.operador2);
           break;
         }
-        case 'dividir':
         case '/': {
           this.resultado = this.dividir(this.operador1, this.operador2);
           if (Number.isNaN(this.resultado)) {
